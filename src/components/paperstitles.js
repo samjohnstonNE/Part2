@@ -1,41 +1,28 @@
 import React from "react";
-import PaperT from "./papert.js";
 
 class PapersTitles extends React.Component {
 
-    constructor(props){
+    constructor(props) {
         super(props)
-        this.state = {
-            results : [],
-            page: 1
-        }
+        this.state = { display: false }
     }
 
-    componentDidMount() {
-        let url = "http://unn-w17004648.newnumyspace.co.uk/kf6012/coursework/part1/api/papers?reading"
-
-        fetch(url)
-            .then( (response) => {
-                if (response.status === 200) {
-                    return response.json()
-                } else {
-                    throw Error(response.statusText);
-                }
-            })
-            .then( (data) => {
-                this.setState({results:data.results})
-            })
-            .catch ((err) => {
-                console.log("something went wrong ", err)
-            });
+    handleClick = () => {
+        this.setState({display:!this.state.display})
     }
 
     render() {
 
+        console.log(this.props.paper)
+
         return (
+
             <div>
-                {this.state.results.map( (paper, i) => (<PaperT key={this.props.paper_id} paper={paper} />) )}
+                <p>{this.props.paper.title}</p>
+                <p>{this.props.paper.abstract}</p>
+                <p>{this.props.paper.first_name} {this.props.paper.last_name}</p>
             </div>
+
         )
     }
 }

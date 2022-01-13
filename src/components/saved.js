@@ -1,5 +1,5 @@
 import React from "react";
-import PapersTitles from "./paperstitles";
+import ReadingTitles from "./readingtitles";
 
 class Saved extends React.Component {
 
@@ -20,7 +20,7 @@ class Saved extends React.Component {
 
             details =
                 <div className="info">
-                    <PapersTitles paper_id={this.props.list.paper_id} />
+                    <ReadingTitles paper_id={this.props.list.paper_id} />
                 </div>
         }
 
