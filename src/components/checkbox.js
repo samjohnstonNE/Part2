@@ -18,16 +18,8 @@ class CheckBox extends React.Component {
         return (item.paper_id === this.props.paper_id)
     }
 
-    handleOnChange = () => {
-        if (this.state.checked) {
-            this.removeFromReadingList()
-        } else {
-            this.addToReadingList()
-        }
-    }
-
     addToReadingList = () => {
-        let url = "http://unn-w17004648.newnumyspace.co.uk/week6/api/readinglist"
+        let url = "http://unn-w17004648.newnumyspace.co.uk/kf6012/coursework/part1/api/readinglist"
 
         let formData = new FormData();
         formData.append('token', localStorage.getItem('myReadingListToken'));
@@ -49,7 +41,7 @@ class CheckBox extends React.Component {
     }
 
     removeFromReadingList = () => {
-        let url = "http://unn-w17004648.newnumyspace.co.uk/week6/api/readinglist"
+        let url = "http://unn-w17004648.newnumyspace.co.uk/kf6012/coursework/part1/api/readinglist"
 
         let formData = new FormData();
         formData.append('token', localStorage.getItem('myReadingListToken'));
@@ -70,12 +62,21 @@ class CheckBox extends React.Component {
             });
     }
 
+    handleOnChange = () => {
+        if (this.state.checked) {
+            this.removeFromReadingList()
+        } else {
+            this.addToReadingList()
+        }
+    }
+
     render() {
+
         return (
             <input
                 type="checkbox"
-                id="readlist"
-                name="readlist"
+                id="readinglist"
+                name="readinglist"
                 value="paper"
                 checked={this.state.checked}
                 onChange={this.handleOnChange}

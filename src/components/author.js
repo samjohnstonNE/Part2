@@ -1,4 +1,5 @@
 import React from "react";
+import PapersContent from "./paperscontent";
 
 
 class Author extends React.Component {
@@ -20,11 +21,11 @@ class Author extends React.Component {
 
             details =
                 <div className="info">
-                    <p>{this.props.author.middle_name}</p>
+                    <PapersContent author_id={this.props.author.author_id} />
                 </div>
         }
 
-        // {filteredResults.map((award, i) => (<AwardContent key={award.name} award={award} />))}
+
         return(
 
             <div>

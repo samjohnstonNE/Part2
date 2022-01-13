@@ -14,10 +14,6 @@ class Papers extends React.Component {
     componentDidMount() {
         let url = "http://unn-w17004648.newnumyspace.co.uk/kf6012/coursework/part1/api/papers"
 
-        if (this.props.actorid !== undefined) {
-            url += "?actor_id=" + this.props.actorid
-        }
-
         fetch(url)
             .then( (response) => {
                 if (response.status === 200) {
@@ -27,7 +23,6 @@ class Papers extends React.Component {
                 }
             })
             .then( (data) => {
-                console.log(data)
                 if (this.props.randomPaper) {
                     const randomPaperID = Math.floor(Math.random() * data.results.length)
                     this.setState({results:[data.results[randomPaperID]]})
@@ -82,7 +77,6 @@ class Papers extends React.Component {
             )
             filteredResults = filteredResults.slice(pageMin, pageMax)
         }
-
 
         return (
             <div>

@@ -1,7 +1,7 @@
 import React from "react";
-import Authorscontent from "./authorscontent";
+import PapersTitles from "./paperstitles";
 
-class Paper extends React.Component {
+class Saved extends React.Component {
 
     constructor(props) {
         super(props)
@@ -20,19 +20,17 @@ class Paper extends React.Component {
 
             details =
                 <div className="info">
-                    <p>{this.props.paper.abstract}</p>
-                    <Authorscontent paper_id={this.props.paper.paper_id} />
+                    <PapersTitles paper_id={this.props.list.paper_id} />
                 </div>
         }
 
         return(
-
             <div>
-                <p onClick={this.handleClick}> {this.props.paper.title} </p>
+                <p onClick={this.handleClick}> {this.props.list.paper_id} </p>
                 {details}
             </div>
         )
     }
 }
 
-export default Paper;
+export default Saved;

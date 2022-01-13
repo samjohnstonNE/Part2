@@ -12,7 +12,7 @@ class Authors extends React.Component {
     }
 
     componentDidMount() {
-        let url = "http://unn-w17004648.newnumyspace.co.uk/kf6012/coursework/part1/api/author"
+        let url = "http://unn-w17004648.newnumyspace.co.uk/kf6012/coursework/part1/api/authors"
 
 
         fetch(url)
@@ -33,7 +33,7 @@ class Authors extends React.Component {
 
 
     filterSearch = (s) => {
-        return s.title.toLowerCase().includes(this.props.search.toLowerCase()) || s.abstract.toLowerCase().includes(this.props.search.toLowerCase())
+        return s.first_name.toLowerCase().includes(this.props.search.toLowerCase()) || s.last_name.toLowerCase().includes(this.props.search.toLowerCase())
     }
 
     render() {
@@ -53,7 +53,7 @@ class Authors extends React.Component {
         let buttons = ""
 
         if (this.props.page !== undefined) {
-            const pageSize = 10;
+            const pageSize = 25;
             let pageMax = this.props.page * pageSize
             let pageMin = pageMax - pageSize
 

@@ -13,7 +13,7 @@ class ReadingList extends React.Component {
     }
 
     componentDidMount() {
-        let url = "http://unn-w17004648.newnumyspace.co.uk/kf6012/coursework/part1/api/papers"
+        let url = "http://unn-w17004648.newnumyspace.co.uk/kf6012/coursework/part1/api/papers?reading"
 
         fetch(url)
             .then( (response) => {
@@ -54,6 +54,8 @@ class ReadingList extends React.Component {
     }
 
     render() {
+
+        console.log(this.state.readinglist)
         return (
             <div>
                 {this.state.results.map( (paper) => (
