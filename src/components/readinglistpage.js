@@ -4,6 +4,17 @@ import Logout from "./logout";
 import ReadingList from "./readinglist";
 import Footer from "./footer";
 
+/**
+ * Displays Reading List
+ * User can add and remove paper to their reading list
+ *
+ * @author Sam Johnston
+ * @id W17004648
+ * @date 16/01/2022
+ * @time 16:00
+ *
+ */
+
 class ReadingListPage extends React.Component {
 
     constructor(props) {
@@ -26,6 +37,14 @@ class ReadingListPage extends React.Component {
         this.setState({email:e.target.value})
     }
 
+    /**
+     * Checks user credentials against data stored in the database
+     *
+     * Catches errors
+     * Stores token
+     *
+     * @var API authentication endpoint
+     */
     handleLoginClick = () => {
         let url = "http://unn-w17004648.newnumyspace.co.uk/kf6012/coursework/part1/api/authenticate"
 
@@ -56,6 +75,10 @@ class ReadingListPage extends React.Component {
             );
     }
 
+    /**
+     * Changes token state
+     * Removes data from in browser localstorage
+     */
     handleLogoutClick = () => {
         this.setState({"authenticated":false})
         localStorage.removeItem('myReadingListToken');
@@ -67,6 +90,11 @@ class ReadingListPage extends React.Component {
         }
     }
 
+    /**
+     *
+     *
+     * @return {JSX.Element}
+     */
     render() {
 
         let page = (

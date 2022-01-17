@@ -1,6 +1,18 @@
 import React from "react";
 import PapersTitles from "./paperstitles";
 
+/**
+ * Displays PaperTitles for the authors
+ *
+ * @author Sam Johnston
+ * @id W17004648
+ * @date 16/01/2022
+ * @time 16:00
+ *
+ * author_id passed down from Author
+ *
+ */
+
 class PapersContent extends React.Component {
 
     constructor(props){
@@ -11,14 +23,17 @@ class PapersContent extends React.Component {
     }
 
 
-
+    /**
+     * Fetch data from endpoint and set as results
+     *
+     * Catch error and console log
+     */
     componentDidMount() {
         let url = "http://unn-w17004648.newnumyspace.co.uk/kf6012/coursework/part1/api/authors"
 
         if (this.props.author_id !== undefined) {
             url += "?content=" + this.props.author_id
         }
-
 
         fetch(url)
             .then( (response) => {
@@ -37,15 +52,20 @@ class PapersContent extends React.Component {
 
     }
 
-
+    /**
+     * Maps results
+     * Calls PaperTitles and passes paper
+     *
+     * @var noData
+     *
+     * @return {JSX.Element}
+     */
     render() {
-
-
         let noData = ""
+
         if (this.state.results.length === 0) {
             noData = <p>No data</p>
         }
-
 
         return (
             <div>

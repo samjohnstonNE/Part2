@@ -3,11 +3,18 @@ import './App.css';
 import {BrowserRouter, Routes, Route, NavLink} from "react-router-dom";
 import Homepage from "./components/homepage.js";
 import PaperPage from "./components/paperpage.js";
-import ReadingListPage from "./components/readinglistpage.js";
-import NotFound from "./components/notfound.js";
 import AuthorPage from "./components/authorspage";
+import ReadingListPage from "./components/readinglistpage.js";
 import SavedListPage from "./components/savedlistpage";
+import NotFound from "./components/notfound.js";
 
+/**
+ * @author Sam Johnston
+ * @id W17004648
+ * @date 16/01/2022
+ * @time 16:00
+ *
+ */
 
 function App() {
   return (

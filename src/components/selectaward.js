@@ -1,5 +1,16 @@
 import React from "react";
 
+/**
+ * Generates Award drop down selection
+ * Awards in list match table
+ *
+ * @author Sam Johnston
+ * @id W17004648
+ * @date 16/01/2022
+ * @time 16:00
+ *
+ */
+
 class SelectAward extends React.Component {
 
 

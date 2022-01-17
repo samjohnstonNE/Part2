@@ -1,33 +1,24 @@
 import React from "react";
-import ReadingTitles from "./readingtitles";
+
+/**
+ * Renders Paper ID
+ *
+ * @author Sam Johnston
+ * @id W17004648
+ * @date 16/01/2022
+ * @time 16:00
+ *
+ * list.paper_id passed down from SavedList
+ *
+ */
 
 class Saved extends React.Component {
 
-    constructor(props) {
-        super(props)
-        this.state = { display: false }
-    }
-
-    handleClick = () => {
-        this.setState({display:!this.state.display})
-    }
-
-
     render() {
-        let details = "";
-
-        if (this.state.display) {
-
-            details =
-                <div className="info">
-                    <ReadingTitles paper_id={this.props.list.paper_id} />
-                </div>
-        }
 
         return(
             <div>
-                <p onClick={this.handleClick}> {this.props.list.paper_id} </p>
-                {details}
+                <p> {this.props.list.paper_id} </p>
             </div>
         )
     }

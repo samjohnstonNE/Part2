@@ -1,6 +1,16 @@
 import React from "react";
 import Paper from "./paper";
 
+/**
+ * Displays more Paper information
+ *
+ * @author Sam Johnston
+ * @id W17004648
+ * @date 16/01/2022
+ * @time 16:00
+ *
+ */
+
 class Papers extends React.Component {
 
     constructor(props){
@@ -11,6 +21,13 @@ class Papers extends React.Component {
         }
     }
 
+    /**
+     * Fetch data from endpoint and set as results
+     *
+     * Random paper function
+     *
+     * Catch error and console log
+     */
     componentDidMount() {
         let url = "http://unn-w17004648.newnumyspace.co.uk/kf6012/coursework/part1/api/papers"
 
@@ -35,15 +52,26 @@ class Papers extends React.Component {
             });
     }
 
-
     filterByAward = (paper) => {
         return ((paper.award === this.props.award) || (this.props.award === ""))
     }
 
+    /**
+     * Search filter for title and abstract
+     *
+     * @param s
+     * @return {boolean}
+     */
     filterSearch = (s) => {
         return s.title.toLowerCase().includes(this.props.search.toLowerCase()) || s.abstract.toLowerCase().includes(this.props.search.toLowerCase())
     }
 
+    /**
+     * Render filtered results and buttons
+     * call Paper
+     *
+     * @return {JSX.Element}
+     */
     render() {
         let noData = ""
 
@@ -63,6 +91,7 @@ class Papers extends React.Component {
 
         let buttons = ""
 
+        /* page size set to 10 */
         if (this.props.page !== undefined) {
             const pageSize = 10;
             let pageMax = this.props.page * pageSize
@@ -81,7 +110,7 @@ class Papers extends React.Component {
         return (
             <div>
                 {noData}
-                {filteredResults.map( (paper, i) => (<Paper key={paper.paper_id} paper={paper} />) )}
+                {filteredResults.map( (paper) => (<Paper key={paper.paper_id} paper={paper} />) )}
                 {buttons}
             </div>
         )

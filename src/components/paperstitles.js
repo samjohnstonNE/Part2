@@ -1,5 +1,17 @@
 import React from "react";
 
+/**
+ * Displays Author and Paper information
+ *
+ * @author Sam Johnston
+ * @id W17004648
+ * @date 16/01/2022
+ * @time 16:00
+ *
+ * props.paper passed down from PapersContent
+ *
+ */
+
 class PapersTitles extends React.Component {
 
     constructor(props) {
@@ -7,16 +19,14 @@ class PapersTitles extends React.Component {
         this.state = { display: false }
     }
 
-    handleClick = () => {
-        this.setState({display:!this.state.display})
-    }
-
+    /**
+     * Information rendered in <p> tags
+     *
+     * @return {JSX.Element}
+     */
     render() {
 
-        console.log(this.props.paper)
-
         return (
-
             <div>
                 <p>{this.props.paper.title}</p>
                 <p>{this.props.paper.abstract}</p>
