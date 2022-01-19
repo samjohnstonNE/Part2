@@ -1,6 +1,6 @@
 import React from "react";
 import Footer from "./footer";
-import logo from "../logo.svg";
+import logo from "../logo.JPG";
 import Papers from "./papers";
 
 /**
