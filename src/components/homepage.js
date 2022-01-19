@@ -23,7 +23,7 @@ class Homepage extends React.Component {
             <div className="App-header">
                 <img src={logo} className="App-logo" alt="logo" />
                 <p> Welcome to My App - Part 2 </p>
-                <Papers className="info" randomPaper={true} />
+                <Papers randomPaper={true} />
                 <Footer />
             </div>
         )
