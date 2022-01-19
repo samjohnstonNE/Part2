@@ -118,7 +118,7 @@ class ReadingListPage extends React.Component {
         return (
             <div>
                 {page}
-                <Footer />
+                <Footer className="info"/>
             </div>
         )
     }

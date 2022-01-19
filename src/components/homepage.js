@@ -22,9 +22,9 @@ class Homepage extends React.Component {
         return (
             <div className="App-header">
                 <img src={logo} className="App-logo" alt="logo" />
-                <p> Welcome to My App - Part 2 </p>
+                <p className="info"> Welcome to My App - Part 2 </p>
                 <Papers randomPaper={true} />
-                <Footer />
+                <Footer className="info"/>
             </div>
         )
     }

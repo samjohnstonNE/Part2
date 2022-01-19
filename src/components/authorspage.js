@@ -67,7 +67,7 @@ class AuthorPage extends React.Component {
                     handleNextClick={this.handleNextClick}
                     handlePreviousClick={this.handlePreviousClick}
                 />
-                <Footer />
+                <Footer className="info"/>
             </div>
         )
     }
