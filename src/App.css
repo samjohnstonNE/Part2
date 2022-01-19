@@ -46,3 +46,6 @@ li a:hover {
 .info{
   font-size: calc(6px + 1.5vmin);
 }
+html {
+  background-color: #282c34;
+}

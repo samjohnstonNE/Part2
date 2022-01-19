@@ -18,9 +18,10 @@ class Footer extends React.Component {
         return (
             <div className="info">
                 <p>Sam Johnston - W17004648</p>
-                <br/>
-                <p>This is University Coursework and is not associated
-                    with Designing Interactive Systems (DIS) conference</p>
+                <p>
+                    This is University Coursework and is not associated
+                    with Designing Interactive Systems (DIS) conference
+                </p>
             </div>
         )
     }
