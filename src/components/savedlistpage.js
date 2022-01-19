@@ -32,7 +32,7 @@ class SavedListPage extends React.Component {
         return (
             <div>
                 <SavedList />
-                <Footer className="info"/>
+                <Footer />
             </div>
         )
     }

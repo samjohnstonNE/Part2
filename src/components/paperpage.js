@@ -82,7 +82,7 @@ class PaperPage extends React.Component {
                     handleNextClick={this.handleNextClick}
                     handlePreviousClick={this.handlePreviousClick}
                 />
-                <Footer className="info"/>
+                <Footer />
             </div>
         )
     }
