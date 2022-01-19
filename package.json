@@ -5,6 +5,7 @@
   "student_id": "W17004648",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://unn-w17004648.newnumyspace.co.uk/kf6012/coursework/part2",
 
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.1",

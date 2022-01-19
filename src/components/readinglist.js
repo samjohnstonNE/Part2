@@ -53,7 +53,7 @@ class ReadingList extends React.Component {
         url = "http://unn-w17004648.newnumyspace.co.uk/kf6012/coursework/part1/api/readinglist"
 
         let formData = new FormData();
-        formData.append('token', localStorage.getItem('myReadingListToken'));
+        formData.append('token', this.props.token);
 
         fetch(url, {    method: 'POST',
             headers : new Headers(),
@@ -80,7 +80,6 @@ class ReadingList extends React.Component {
      */
     render() {
 
-        console.log(this.state.readinglist)
         return (
             <div>
                 {this.state.results.map( (paper) => (

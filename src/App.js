@@ -18,7 +18,7 @@ import NotFound from "./components/notfound.js";
 
 function App() {
   return (
-      <BrowserRouter>
+      <BrowserRouter basename={"/kf6012/coursework/part2"}>
         <div className="App">
           <header className="App-header">
 

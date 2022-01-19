@@ -22,11 +22,19 @@ class ReadingListPage extends React.Component {
         this.state = {
             authenticated: false,
             email: "",
-            password: ""
+            password: "",
+            token: null
         }
         this.handleEmail = this.handleEmail.bind(this);
         this.handlePassword = this.handlePassword.bind(this);
         this.handleLoginClick = this.handleLoginClick.bind(this);
+        this.handleLogoutClick = this.handleLogoutClick.bind(this);
+    }
+
+    componentDidMount() {
+        if(localStorage.getItem('myReadingListToken')) {
+            this.setState({authenticated:true, token:localStorage.getItem('myReadingListToken')});
+        }
     }
 
     handlePassword = (e) => {
@@ -65,7 +73,7 @@ class ReadingListPage extends React.Component {
             })
             .then( (data) => {
                 if ("token" in data.results) {
-                    this.setState({ authenticated: true })
+                    this.setState({ authenticated: true, token: data.results.token})
                     localStorage.setItem('myReadingListToken', data.results.token)
                 }
             })
@@ -80,14 +88,8 @@ class ReadingListPage extends React.Component {
      * Removes data from in browser localstorage
      */
     handleLogoutClick = () => {
-        this.setState({"authenticated":false})
+        this.setState({authenticated:false, token: null})
         localStorage.removeItem('myReadingListToken');
-    }
-
-    componentDidMount() {
-        if(localStorage.getItem('myReadingListToken')) {
-            this.setState({authenticated:true});
-        }
     }
 
     /**
@@ -108,7 +110,7 @@ class ReadingListPage extends React.Component {
             page = (
                 <div>
                     <Logout handleLogoutClick={this.handleLogoutClick} />
-                    <ReadingList />
+                    <ReadingList token={this.state.token}/>
                 </div>
             )
         }
