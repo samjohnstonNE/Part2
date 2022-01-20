@@ -1,15 +1,12 @@
 import React from "react";
 
 /**
- * Renders Paper ID
+ * Renders the paper id
+ *
+ * Creates the html tags for the paper id to be displayed
  *
  * @author Sam Johnston
  * @id W17004648
- * @date 16/01/2022
- * @time 16:00
- *
- * list.paper_id passed down from SavedList
- *
  */
 
 class Saved extends React.Component {

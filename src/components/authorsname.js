@@ -3,13 +3,10 @@ import React from "react";
 /**
  * Displays author first and last name
  *
+ * props.author is passed down from AuthorContent class
+ *
  * @author Sam Johnston
  * @id W17004648
- * @date 16/01/2022
- * @time 16:00
- *
- * props.author passed down from Authors Content
- *
  */
 
 class AuthorsNames extends React.Component {

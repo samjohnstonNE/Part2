@@ -1,41 +1,30 @@
 import React from 'react';
 
 /**
- * Generates Login function
+ * Generates input for login function
+ *
+ * two input tags are generate for the username and password
+ * a button is also included to submit the credentials
  *
  * @author Sam Johnston
  * @id W17004648
- * @date 16/01/2022
- * @time 16:00
- *
- * Passed down:
- * props.email
- * props.handleEmail
- * props.password
- * props.handlePassword
- * props.handleLoginClick
- *
  */
 
 class Login extends React.Component {
 
-    /**
-     * Displays HTML Input and Button tags
-     *
-     * @return {JSX.Element}
-     */
+
     render() {
         return (
             <div className="App-header">
                 <input
                     type='text'
-                    placeholder='email'
+                    placeholder='Email'
                     value={this.props.email}
                     onChange={this.props.handleEmail}
                 />
                 <input
                     type='password'
-                    placeholder='password'
+                    placeholder='Password'
                     value={this.props.password}
                     onChange={this.props.handlePassword}
                 />

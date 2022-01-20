@@ -5,14 +5,15 @@ import ReadingList from "./readinglist";
 import Footer from "./footer";
 
 /**
- * Displays Reading List
- * User can add and remove paper to their reading list
+ * Displays papers that can added or removed from the users reading list
+ *
+ * Users credentials are checked against the database
+ * rejected if invalid, if not then authentication set to true and token is stored in local storage
+ * token is passed as a prop to ReadingList class
+ * Papers title can be clicked on to reveal more information
  *
  * @author Sam Johnston
  * @id W17004648
- * @date 16/01/2022
- * @time 16:00
- *
  */
 
 class ReadingListPage extends React.Component {
@@ -45,14 +46,6 @@ class ReadingListPage extends React.Component {
         this.setState({email:e.target.value})
     }
 
-    /**
-     * Checks user credentials against data stored in the database
-     *
-     * Catches errors
-     * Stores token
-     *
-     * @var API authentication endpoint
-     */
     handleLoginClick = () => {
         let url = "http://unn-w17004648.newnumyspace.co.uk/kf6012/coursework/part1/api/authenticate"
 
@@ -74,6 +67,7 @@ class ReadingListPage extends React.Component {
             .then( (data) => {
                 if ("token" in data.results) {
                     this.setState({ authenticated: true, token: data.results.token})
+                    /* stores token data in local storage */
                     localStorage.setItem('myReadingListToken', data.results.token)
                 }
             })
@@ -83,20 +77,12 @@ class ReadingListPage extends React.Component {
             );
     }
 
-    /**
-     * Changes token state
-     * Removes data from in browser localstorage
-     */
     handleLogoutClick = () => {
         this.setState({authenticated:false, token: null})
         localStorage.removeItem('myReadingListToken');
     }
 
-    /**
-     *
-     *
-     * @return {JSX.Element}
-     */
+
     render() {
 
         let page = (

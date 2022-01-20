@@ -4,13 +4,10 @@ import PapersTitles from "./paperstitles";
 /**
  * Displays PaperTitles for the authors
  *
+ * data is mapped from the author content endpoint
+ *
  * @author Sam Johnston
  * @id W17004648
- * @date 16/01/2022
- * @time 16:00
- *
- * author_id passed down from Author
- *
  */
 
 class PapersContent extends React.Component {
@@ -22,12 +19,6 @@ class PapersContent extends React.Component {
         }
     }
 
-
-    /**
-     * Fetch data from endpoint and set as results
-     *
-     * Catch error and console log
-     */
     componentDidMount() {
         let url = "http://unn-w17004648.newnumyspace.co.uk/kf6012/coursework/part1/api/authors"
 
@@ -52,14 +43,7 @@ class PapersContent extends React.Component {
 
     }
 
-    /**
-     * Maps results
-     * Calls PaperTitles and passes paper
-     *
-     * @var noData
-     *
-     * @return {JSX.Element}
-     */
+
     render() {
         let noData = ""
 

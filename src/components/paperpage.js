@@ -5,16 +5,14 @@ import SearchBox from "./searchbox.js";
 import Footer from "./footer";
 
 /**
- * Displays Paper information
- * Search box
- * Award Filter
- * Footer
+ * Displays the list of papers
+ *
+ * Papers title can be clicked on to reveal more information
+ * The user can filter the paper using either the search box or award filter
+ * The search filter searches both title and abstract
  *
  * @author Sam Johnston
  * @id W17004648
- * @date 16/01/2022
- * @time 16:00
- *
  */
 
 class PaperPage extends React.Component {
@@ -32,23 +30,10 @@ class PaperPage extends React.Component {
         this.handlePreviousClick= this.handlePreviousClick.bind(this);
     }
 
-
-    /**
-     * Change search state to value
-     * Set page state to one upon function call
-     *
-     * @param e
-     */
     handleSearch = (e) => {
         this.setState({search:e.target.value, page:1})
     }
 
-    /**
-     * Change award state to value
-     * Set page state to one upon function call
-     *
-     * @param e
-     */
     handleAwardSelect = (e) => {
         this.setState({award:e.target.value, page:1})
     }
@@ -64,12 +49,6 @@ class PaperPage extends React.Component {
     }
 
 
-    /**
-     * renders multiple components
-     * states and functions are passed
-     *
-     * @return {JSX.Element}
-     */
     render() {
         return (
             <div className="App-header">

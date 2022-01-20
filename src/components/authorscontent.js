@@ -2,16 +2,12 @@ import React from "react";
 import AuthorsNames from "./authorsname";
 
 /**
- * Author information
- * Details hidden by default
+ * Displays AuthorsNames for the authors
+ *
+ * data is mapped from the paper content endpoint
  *
  * @author Sam Johnston
  * @id W17004648
- * @date 16/01/2022
- * @time 16:00
- *
- * paper.id passed down from Paper
- *
  */
 
 class AuthorsContent extends React.Component {
@@ -23,12 +19,6 @@ class AuthorsContent extends React.Component {
         }
     }
 
-
-    /**
-     * Fetch data from endpoint and set as results
-     *
-     * Catch error and console log
-     */
     componentDidMount() {
         let url = "http://unn-w17004648.newnumyspace.co.uk/kf6012/coursework/part1/api/papers"
 
@@ -53,14 +43,7 @@ class AuthorsContent extends React.Component {
 
     }
 
-    /**
-     * Maps results from fetch
-     * calls AuthorNames components using author id as key
-     *
-     * @var noData
-     *
-     * @returns {JSX.Element}
-     */
+
     render() {
         let noData = ""
 

@@ -2,15 +2,14 @@ import React from "react";
 import Authorscontent from "./authorscontent";
 
 /**
- * Displays Paper information
+ * Renders Paper information
+ *
+ * Paper abstract and AuthorsContent are hidden by default
+ * if the title is clicked then the details will be revealed
+ * paper.paper_id is passed to AuthorsContent class
  *
  * @author Sam Johnston
  * @id W17004648
- * @date 16/01/2022
- * @time 16:00
- *
- * paper.paper_id passed down from Papers
- *
  */
 
 class Paper extends React.Component {
@@ -24,13 +23,7 @@ class Paper extends React.Component {
         this.setState({display:!this.state.display})
     }
 
-    /**
-     * Renders paper titles
-     * calls AuthorContent
-     * Details hidden by default
-     *
-     * @return {JSX.Element}
-     */
+
     render() {
         let details = "";
 

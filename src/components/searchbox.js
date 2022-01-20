@@ -1,13 +1,12 @@
 import React from "react";
 
 /**
- * Generates input tag for search box
+ * Generates the input box for the searching
+ *
+ * Search box can be added to any page
  *
  * @author Sam Johnston
  * @id W17004648
- * @date 16/01/2022
- * @time 16:00
- *
  */
 
 class Searchbox extends React.Component {

@@ -3,13 +3,13 @@ import Footer from "./footer";
 import SavedList from "./savedlist";
 
 /**
- * Displays paper_id of currently saved papers in Reading List
+ * A page to display the paper IDs of any papers the user has saved to their reading list
+ *
+ * The saved papers are only visible to a users who is logged in
+ * The paper IDs are listed in numerical order and have a total amount at the bottom of the list
  *
  * @author Sam Johnston
  * @id W17004648
- * @date 16/01/2022
- * @time 16:00
- *
  */
 
 class SavedListPage extends React.Component {
@@ -26,6 +26,7 @@ class SavedListPage extends React.Component {
             this.setState({authenticated:true});
         }
     }
+
 
     render() {
 

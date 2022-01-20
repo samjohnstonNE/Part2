@@ -2,13 +2,16 @@ import React from "react";
 import Paper from "./paper";
 
 /**
- * Displays more Paper information
+ * Paper details
+ *
+ * GET request is used to retrieve data
+ * randomPaper function is set using math functions
+ * all data is then filter using javascript
+ * page size is set to 10 (results per page)
+ * data is mapped and paper id is passed to the Paper class
  *
  * @author Sam Johnston
  * @id W17004648
- * @date 16/01/2022
- * @time 16:00
- *
  */
 
 class Papers extends React.Component {
@@ -21,13 +24,6 @@ class Papers extends React.Component {
         }
     }
 
-    /**
-     * Fetch data from endpoint and set as results
-     *
-     * Random paper function
-     *
-     * Catch error and console log
-     */
     componentDidMount() {
         let url = "http://unn-w17004648.newnumyspace.co.uk/kf6012/coursework/part1/api/papers"
 
@@ -56,25 +52,15 @@ class Papers extends React.Component {
         return ((paper.award === this.props.award) || (this.props.award === ""))
     }
 
-    /**
-     * Search filter for title and abstract
-     *
-     * @param s
-     * @return {boolean}
-     */
     filterSearch = (s) => {
         return s.title.toLowerCase().includes(this.props.search.toLowerCase()) || s.abstract.toLowerCase().includes(this.props.search.toLowerCase())
     }
 
-    /**
-     * Render filtered results and buttons
-     * call Paper
-     *
-     * @return {JSX.Element}
-     */
+
     render() {
         let noData = ""
 
+        /* no data message set can be called in the return */
         if (this.state.results.length === 0) {
             noData = <p>No data</p>
         }
@@ -85,6 +71,7 @@ class Papers extends React.Component {
             filteredResults = filteredResults.filter(this.filterByAward)
         }
 
+        /* if the length is greater than 0 and not undefined then user the search function */
         if ((filteredResults.length > 0) && (this.props.search !== undefined)) {
             filteredResults = filteredResults.filter(this.filterSearch)
         }
@@ -98,6 +85,7 @@ class Papers extends React.Component {
             let pageMin = pageMax - pageSize
 
 
+            /* buttons are called in the return */
             buttons = (
                 <div>
                     <button onClick={this.props.handlePreviousClick} disabled={this.props.page <= 1}>Previous</button>

@@ -1,14 +1,12 @@
 import React from "react";
 
 /**
- * Generates Award drop down selection
- * Awards in list match table
+ * Generates dropdown list to filter papers by award name
+ *
+ * The award names are hardcoded in to match the data in the award_type table
  *
  * @author Sam Johnston
  * @id W17004648
- * @date 16/01/2022
- * @time 16:00
- *
  */
 
 class SelectAward extends React.Component {

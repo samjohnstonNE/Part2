@@ -2,13 +2,14 @@ import React from "react";
 import Saved from "./saved";
 
 /**
- * Displays Reading List information if user is signed in
+ * Maps Reading List information if user is signed in
+ *
+ * Token is checked to verify the user
+ * total number of papers is set based on length
+ * Saved class is called
  *
  * @author Sam Johnston
  * @id W17004648
- * @date 16/01/2022
- * @time 16:00
- *
  */
 
 class SavedList extends React.Component {
@@ -21,12 +22,6 @@ class SavedList extends React.Component {
         }
     }
 
-    /**
-     * Pulls reading list info
-     *
-     * catches error
-     * sets as results
-     */
     componentDidMount() {
         let url = "http://unn-w17004648.newnumyspace.co.uk/kf6012/coursework/part1/api/readinglist"
 
@@ -51,15 +46,9 @@ class SavedList extends React.Component {
             });
     }
 
-    /**
-     * Maps results
-     * calls Saved
-     *
-     * Renders total results as number
-     *
-     * @return {JSX.Element}
-     */
+
     render() {
+
         return (
             <div>
                 {this.state.readinglist.map( (list) => (<Saved key={list.paper_id} list={list}/>) )}

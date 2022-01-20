@@ -2,16 +2,14 @@ import React from "react";
 import PapersContent from "./paperscontent";
 
 /**
- * Author JSX tags
+ * Renders Author information
+ *
  * Details hidden by default
+ * if the authors name is is clicked then the details will be revealed
+ * author.author_id is passed to PapersContent class
  *
  * @author Sam Johnston
  * @id W17004648
- * @date 16/01/2022
- * @time 16:00
- *
- * author.author_id passed down from Authors
- *
  */
 
 class Author extends React.Component {
@@ -21,22 +19,11 @@ class Author extends React.Component {
         this.state = { display: false }
     }
 
-    /**
-     *  Change display state when object is clicked
-     */
     handleClick = () => {
         this.setState({display:!this.state.display})
     }
 
-    /**
-     * Render author info
-     * Call Papers content component
-     * when name onClick state changes
-     *
-     * @var details
-     *
-     * @return {JSX.Element}
-     */
+
     render() {
         let details = "";
 

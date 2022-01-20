@@ -1,15 +1,12 @@
 import React from "react";
 
 /**
- * Displays Author and Paper information
+ * Renders Author first name, last name, paper title and abstract
+ *
+ * All props are passed down from the class above
  *
  * @author Sam Johnston
  * @id W17004648
- * @date 16/01/2022
- * @time 16:00
- *
- * props.paper passed down from PapersContent
- *
  */
 
 class PapersTitles extends React.Component {
@@ -19,11 +16,7 @@ class PapersTitles extends React.Component {
         this.state = { display: false }
     }
 
-    /**
-     * Information rendered in <p> tags
-     *
-     * @return {JSX.Element}
-     */
+
     render() {
 
         return (

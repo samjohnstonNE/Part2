@@ -2,26 +2,19 @@ import React from "react";
 import Author from "./author";
 
 /**
- * Displays author information
+ * Author details
+ *
+ * GET request is used to retrieve data
+ * all data is then filter using javascript
+ * page size is set to 25 (results per page)
+ * data is mapped and author id is passed to the Author class
  *
  * @author Sam Johnston
  * @id W17004648
- * @date 16/01/2022
- * @time 16:00
- *
- * props.search passed down from AuthorsPage
- * props.page passed down from AuthorsPage
- *
  */
 
 class Authors extends React.Component {
 
-    /**
-     * Set results as empty array
-     * Default page 1
-     *
-     * @param props
-     */
     constructor(props){
         super(props)
         this.state = {
@@ -30,11 +23,6 @@ class Authors extends React.Component {
         }
     }
 
-    /**
-     * Fetch data from endpoint and set as results
-     *
-     * Catch error and console log
-     */
     componentDidMount() {
         let url = "http://unn-w17004648.newnumyspace.co.uk/kf6012/coursework/part1/api/authors"
 
@@ -54,29 +42,11 @@ class Authors extends React.Component {
             });
     }
 
-
-    /**
-     * Search feature
-     * both first and lastname
-     *
-     * @param s
-     * @returns {boolean}
-     */
     filterSearch = (s) => {
         return s.first_name.toLowerCase().includes(this.props.search.toLowerCase()) || s.last_name.toLowerCase().includes(this.props.search.toLowerCase())
     }
 
-    /**
-     * Adds buttons
-     * Maps filtered data from the fetch
-     * Calls author component using Author ID as key
-     *
-     * @var noData
-     * @var filteredResults
-     * @var buttons
-     *
-     * @returns {JSX.Element}
-     */
+
     render() {
         let noData = ""
 
@@ -86,6 +56,7 @@ class Authors extends React.Component {
         }
         let filteredResults = this.state.results
 
+        /* if the length is greater than 0 and not undefined then user the search function */
         if ((filteredResults.length > 0) && (this.props.search !== undefined)) {
             filteredResults = filteredResults.filter(this.filterSearch)
         }
@@ -98,6 +69,7 @@ class Authors extends React.Component {
             let pageMax = this.props.page * pageSize
             let pageMin = pageMax - pageSize
 
+            /* buttons are called in the return */
             buttons = (
                 <div>
                     <button onClick={this.props.handlePreviousClick} disabled={this.props.page <= 1}>Previous</button>

@@ -9,11 +9,13 @@ import SavedListPage from "./components/savedlistpage";
 import NotFound from "./components/notfound.js";
 
 /**
+ * Renders Navbar and defaults with homepage
+ *
+ * Each link in the navbar is set with NavLink and the element is called
+ * through the routes tags
+ *
  * @author Sam Johnston
  * @id W17004648
- * @date 16/01/2022
- * @time 16:00
- *
  */
 
 function App() {

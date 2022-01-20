@@ -4,13 +4,14 @@ import Footer from "./footer";
 import Authors from "./authors";
 
 /**
- * Displays Author information
+ * Displays the Author first and last name in a list
+ *
+ * Authors can be searched by either first or last name
+ * Authors name can clicked on to reveal what papers they have wrote
+ * along side any other authors who contributed to the paper
  *
  * @author Sam Johnston
  * @id W17004648
- * @date 16/01/2022
- * @time 16:00
- *
  */
 
 class AuthorPage extends React.Component {
@@ -26,12 +27,6 @@ class AuthorPage extends React.Component {
         this.handlePreviousClick= this.handlePreviousClick.bind(this);
     }
 
-    /**
-     * Change search state to value
-     * Set page state to one upon function call
-     *
-     * @param e
-     */
     handleSearch = (e) => {
         this.setState({search:e.target.value, page:1})
     }
@@ -47,16 +42,6 @@ class AuthorPage extends React.Component {
     }
 
 
-    /**
-     * Call SearchBox
-     *
-     * Call Authors, set search and page state
-     * Pass functions to Authors
-     *
-     * Call Footer
-     *
-     * @returns {JSX.Element}
-     */
     render() {
         return (
             <div className="App-header">
