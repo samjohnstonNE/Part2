@@ -45,6 +45,7 @@ class AuthorPage extends React.Component {
     render() {
         return (
             <div className="App-header">
+                <p className={"smaller"}>Authors names can be clicked to reveal more info</p>
                 <SearchBox search={this.state.search} handleSearch={this.handleSearch} />
                 <Authors
                     search={this.state.search}

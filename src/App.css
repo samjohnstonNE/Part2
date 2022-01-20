@@ -47,6 +47,10 @@ li a:hover {
   font-size: calc(6px + 1.5vmin);
 }
 
+.smaller{
+  font-size: calc(5px + 1vmin);
+}
+
 html {
   background-color: #282c34;
 }

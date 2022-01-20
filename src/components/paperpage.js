@@ -52,6 +52,7 @@ class PaperPage extends React.Component {
     render() {
         return (
             <div className="App-header">
+                <p className={"smaller"}>Papers titles can be clicked to reveal more info</p>
                 <SearchBox search={this.state.search} handleSearch={this.handleSearch} />
                 <SelectAward award={this.state.award} handleAwardSelect={this.handleAwardSelect} />
                 <Papers

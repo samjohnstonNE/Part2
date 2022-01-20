@@ -95,6 +95,7 @@ class ReadingListPage extends React.Component {
         if (this.state.authenticated) {
             page = (
                 <div>
+                    <p className={"smaller"}>Papers titles can be clicked to reveal more info</p>
                     <Logout handleLogoutClick={this.handleLogoutClick} />
                     <ReadingList token={this.state.token}/>
                 </div>
